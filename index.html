@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunPictures</title>
+    <script type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="manifest.json">
+</head>
+<body>
+    <div id="choisir">
+        <h1>Choisir une Photo</h1>
+        <h2>Importer</h2>
+        <form id="importer">
+            <div>
+                <label for="photo">Photo:</label>
+                <input type="file" name="photo" id="photo" accept="image/*">
+            </div>
+            <button type="submit">Importer</button>
+        </form>
+        <hr>
+        <h2>Prendre</h2>
+        <button id="ouvrirCamera">Ouvrir la caméra</button>
+        <button id="fermerCamera" disabled>Fermer la caméra</button>
+        <video id="video" autoplay playsinline muted hidden></video>
+        <button id="prendrePhoto" hidden>Prendre une photo</button>
+    </div>
+    <div id="retouche" hidden>
+        <h1>Retouche</h1>
+        <canvas id="canvas"></canvas>
+        <form id="telecharger" novalidate>
+            <div>
+                <label for="filtre">Filtre</label>
+                <select name="filtre" id="filtre">
+                    <option value="normal">Normal</option>
+                    <option value="noirblanc">Noir et blanc</option>
+                    <option value="sepia">Sépia</option>
+                    <option value="flou">Flou</option>
+                    <!-- <option value="luminosite">Luminosité</option>
+                    <option value="contraste">Contraste</option> -->
+                </select>
+                <label for="luminosite"></label>
+                <input type="range" id="luminosite" min="50" max="200" value="100">
+            </div>
+            <button type="submit">Télécharger</button>
+        </form>
+    </div>
+</body>
+</html>
